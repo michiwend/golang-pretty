@@ -10,7 +10,7 @@ Vcs-Git: git://anonscm.debian.org/pkg-go/packages/golang-pretty.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-go/packages/golang-pretty.git;a=summary
 
 Package: golang-pretty-dev
-Architecture: any
+Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, golang-text-dev
 Description: Pretty printing for go values
  Package pretty provides pretty-printing for Go values. This is useful
