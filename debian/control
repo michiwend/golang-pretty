@@ -6,8 +6,8 @@ Build-Depends: debhelper (>= 9.0.0), golang-go, dh-golang,
 	       golang-text-dev
 Standards-Version: 3.9.4
 Homepage: https://github.com/kr/pretty/
-Vcs-Git: git://github.com/kr/pretty.git
-Vcs-Browser: https://github.com/kr/pretty/
+Vcs-Git: git://anonscm.debian.org/pkg-go/packages/golang-pretty.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-go/packages/golang-pretty.git;a=summary
 
 Package: golang-pretty-dev
 Architecture: any
