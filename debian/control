@@ -11,7 +11,7 @@ Vcs-Browser: https://github.com/kr/pretty/
 
 Package: golang-pretty-dev
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, golang-text-dev
 Description: Pretty printing for go values
  Package pretty provides pretty-printing for Go values. This is useful
  during debugging, to avoid wrapping long output lines in the
