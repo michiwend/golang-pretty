@@ -3,7 +3,7 @@ Upstream-Name: golang-pretty
 Source: https://github.com/kr/pretty/
 
 Files: *
-Copyright: 2011, 2012, 2013 Keith Rarick
+Copyright: 2011, 2012, 2013 Keith Rarick <kr@xph.us>
 License: Expat
 
 Files: debian/*
