@@ -2,7 +2,7 @@ Source: golang-pretty
 Section: devel
 Priority: extra
 Maintainer: Tonnerre Lombard <tonnerre@ancient-solutions.com>
-Build-Depends: debhelper (>= 9.0.0), golang-go, dh-golang,
+Build-Depends: debhelper (>= 9), golang-go, dh-golang,
 	       golang-text-dev
 Standards-Version: 3.9.4
 Homepage: https://github.com/kr/pretty/
