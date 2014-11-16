@@ -39,6 +39,7 @@ func (w diffWriter) printf(f string, a ...interface{}) {
 }
 
 func (w diffWriter) diff(av, bv reflect.Value) {
+
 	if !av.IsValid() && bv.IsValid() {
 		w.printf("nil != %#v", bv.Interface())
 		return
@@ -48,6 +49,9 @@ func (w diffWriter) diff(av, bv reflect.Value) {
 		return
 	}
 	if !av.IsValid() && !bv.IsValid() {
+		return
+	}
+	if !av.CanInterface() || !bv.CanInterface() {
 		return
 	}
 
@@ -102,6 +106,16 @@ func (w diffWriter) diff(av, bv reflect.Value) {
 		}
 	case reflect.Interface:
 		w.diff(reflect.ValueOf(av.Interface()), reflect.ValueOf(bv.Interface()))
+	case reflect.Array, reflect.Slice:
+		if av.Len() != bv.Len() {
+			w.printf("%ss differ in lenght: %d != %d", at.Kind().String(), av.Len(), bv.Len())
+			return
+		}
+
+		for i := 0; i < av.Len(); i++ {
+			w.diff(av.Index(i), bv.Index(i))
+		}
+
 	default:
 		if !reflect.DeepEqual(av.Interface(), bv.Interface()) {
 			w.printf("%# v != %# v", Formatter(av.Interface()), Formatter(bv.Interface()))
